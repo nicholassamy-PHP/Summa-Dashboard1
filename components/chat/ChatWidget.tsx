@@ -17,7 +17,7 @@ export function ChatWidget() {
       id: "1",
       role: "assistant",
       content:
-        "Hello! I'm your Summa Logistics Copilot. Ask me about shipment status, ESG data, or compliance checks. Try asking: 'Where is shipment #459?' or 'What were my total carbon emissions for April?'",
+        "Hello! I'm SUMMA AI, your supply chain assistant. Ask me about shipment status, ESG data, compliance, or carbon emissions. Try: 'Where is shipment #459?' or 'Show me ESG metrics'",
       timestamp: new Date(),
     },
   ]);
@@ -93,7 +93,7 @@ export function ChatWidget() {
         <div className="fixed bottom-8 right-8 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border-2 border-gray-200 overflow-hidden">
           <div className="flex items-center justify-between p-5 border-b-2 border-gray-200 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-2xl">
             <div>
-              <h3 className="font-bold text-lg">Supply Chain Copilot</h3>
+              <h3 className="font-bold text-lg">Ask SUMMA AI</h3>
               <p className="text-xs text-blue-100 mt-0.5">Powered by Claude AI</p>
             </div>
             <button
