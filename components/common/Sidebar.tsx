@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MapPin, FileText, BarChart3, MessageSquare, Settings, Home, LogOut, Menu, X } from "lucide-react";
+import { MapPin, FileText, BarChart3, MessageSquare, Settings, Home, LogOut, Menu, X, BarChart2 } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: Home },
   { href: "/dashboard/map", label: "Live Map", icon: MapPin },
   { href: "/dashboard/documents", label: "Document Vault", icon: FileText },
+  { href: "/dashboard/reports", label: "Reports", icon: BarChart2 },
   { href: "/dashboard/esg", label: "ESG Reporting", icon: BarChart3 },
   { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ];
