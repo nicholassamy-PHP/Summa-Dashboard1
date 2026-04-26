@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MapPin, FileText, BarChart3, MessageSquare, Settings, Home, LogOut, Menu, X, BarChart2 } from "lucide-react";
-import { useState } from "react";
+import { useSidebar } from "@/lib/sidebar-context";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: Home },
@@ -16,7 +16,7 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(true);
+  const { isOpen, setIsOpen } = useSidebar();
 
   return (
     <aside className={`${isOpen ? 'w-72' : 'w-16'} bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white border-r border-gray-700 min-h-screen flex flex-col shadow-2xl transition-all duration-300`}>

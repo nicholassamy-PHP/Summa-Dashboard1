@@ -22,9 +22,9 @@ export function LiveMap({ shipments }: LiveMapProps) {
   };
 
   return (
-    <div className="w-full h-full flex flex-col bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg relative">
+    <div className="w-full h-full flex flex-col bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg relative overflow-hidden">
       {/* Zoom Controls */}
-      <div className="absolute top-4 left-4 flex gap-2 z-20">
+      <div className="absolute top-4 left-4 flex gap-2 z-50">
         <button
           onClick={handleZoomIn}
           className="bg-white text-gray-900 p-2 rounded-lg shadow-lg hover:bg-gray-100 transition-colors"
@@ -170,7 +170,7 @@ export function LiveMap({ shipments }: LiveMapProps) {
       </div>
 
       {/* Info panel */}
-      <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-5 max-w-sm z-20">
+      <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-5 max-w-sm z-50 pointer-events-auto">
         <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2 text-lg">
           <MapPin size={18} />
           Active Shipments
@@ -188,7 +188,7 @@ export function LiveMap({ shipments }: LiveMapProps) {
       </div>
 
       {/* Legend */}
-      <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 text-sm z-20">
+      <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4 text-sm z-50 pointer-events-auto">
         <p className="font-bold text-gray-900 mb-2">Legend</p>
         <div className="space-y-2">
           <div className="flex items-center gap-2">
