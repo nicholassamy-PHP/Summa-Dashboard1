@@ -157,7 +157,7 @@ export default function ReportsPage() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="border" />
                 <YAxis label={{ value: "Hours", angle: -90, position: "insideLeft" }} />
-                <Tooltip formatter={(value) => `${value} hours`} />
+                <Tooltip formatter={(value) => typeof value === 'number' ? `${value} hours` : '0 hours'} />
                 <Legend />
                 <Bar dataKey="avgHours" name="Avg Wait Time (hrs)" fill="#f59e0b" radius={[8, 8, 0, 0]} />
                 <Bar dataKey="shipments" name="Shipments Count" fill="#3b82f6" radius={[8, 8, 0, 0]} />
@@ -174,7 +174,7 @@ export default function ReportsPage() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="week" />
                 <YAxis label={{ value: "Days", angle: -90, position: "insideLeft" }} />
-                <Tooltip formatter={(value) => `${value} days`} />
+                <Tooltip formatter={(value) => typeof value === 'number' ? `${value} days` : '0 days'} />
                 <Legend />
                 <Bar dataKey="minDays" name="Min Transit Days" fill="#10b981" opacity={0.3} />
                 <Bar dataKey="maxDays" name="Max Transit Days" fill="#ef4444" opacity={0.3} />
@@ -197,7 +197,7 @@ export default function ReportsPage() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
                 <YAxis label={{ value: "Cost ($)", angle: -90, position: "insideLeft" }} />
-                <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
+                <Tooltip formatter={(value) => typeof value === 'number' ? `$${value.toLocaleString()}` : '$0'} />
                 <Legend />
                 <Line type="monotone" dataKey="spend" name="Current Month" stroke="#3b82f6" strokeWidth={3} dot={{ r: 6 }} />
                 <Line type="monotone" dataKey="yoy" name="Year-over-Year" stroke="#10b981" strokeWidth={3} dot={{ r: 6 }} strokeDasharray="5,5" />
@@ -341,7 +341,7 @@ export default function ReportsPage() {
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                   </Pie>
-                  <Tooltip formatter={(value) => `${value}%`} />
+                  <Tooltip formatter={(value) => typeof value === 'number' ? `${value}%` : '0%'} />
                 </PieChart>
               </ResponsiveContainer>
               <div className="space-y-4">
@@ -375,7 +375,7 @@ export default function ReportsPage() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
                 <YAxis label={{ value: "CO2e (kg)", angle: -90, position: "insideLeft" }} />
-                <Tooltip formatter={(value) => `${value.toLocaleString()} kg CO2e`} />
+                <Tooltip formatter={(value) => typeof value === 'number' ? `${value.toLocaleString()} kg CO2e` : '0 kg CO2e'} />
                 <Bar dataKey="emissions" name="Total CO2e Emissions" fill="#10b981" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
