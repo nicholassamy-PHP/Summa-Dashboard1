@@ -26,10 +26,22 @@ body {
   }
 
   .kpi-value {
-    @apply text-4xl md:text-5xl font-bold tracking-tight;
+    @apply text-5xl md:text-6xl font-bold tracking-tight;
   }
 
   .text-accent {
     @apply text-blue-400;
+  }
+
+  h1 {
+    @apply font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply font-bold tracking-tight;
+  }
+
+  h3 {
+    @apply font-bold tracking-tight;
   }
 }

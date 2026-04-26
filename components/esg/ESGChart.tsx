@@ -107,6 +107,48 @@ export function ESGChart({ data }: ESGChartProps) {
           </>
         )}
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-4">Compliance Score</h3>
+          <div className="text-center">
+            <p className="text-5xl font-bold text-blue-600">96</p>
+            <p className="text-gray-600 mt-2">/100</p>
+            <div className="mt-4 bg-gray-200 rounded-full h-2">
+              <div className="bg-blue-600 h-2 rounded-full" style={{ width: '96%' }}></div>
+            </div>
+            <p className="text-sm text-gray-600 mt-3">All USMCA requirements met</p>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-4">Route Efficiency</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="text-sm font-medium text-gray-700">Fuel Efficiency</p>
+              <p className="text-2xl font-bold text-green-600">8.4 km/L</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-700">On-time Delivery</p>
+              <p className="text-2xl font-bold text-blue-600">98.5%</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg border border-gray-200 p-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-4">Sustainability Goals</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="text-sm font-medium text-gray-700">2024 Target</p>
+              <p className="text-2xl font-bold text-emerald-600">-35% CO2</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-gray-700">Progress</p>
+              <p className="text-2xl font-bold text-blue-600">32% ✓</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
