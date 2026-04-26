@@ -11,29 +11,40 @@ interface KPICardProps {
 }
 
 export function KPICard({ title, value, subtitle, icon, color = "blue" }: KPICardProps) {
-  const colorClasses = {
-    blue: "border-blue-500 bg-blue-50",
-    green: "border-green-500 bg-green-50",
-    amber: "border-amber-500 bg-amber-50",
-    red: "border-red-500 bg-red-50",
+  const gradients = {
+    blue: "from-blue-50 to-blue-100 border-blue-200",
+    green: "from-green-50 to-emerald-100 border-green-200",
+    amber: "from-amber-50 to-orange-100 border-amber-200",
+    red: "from-red-50 to-rose-100 border-red-200",
   };
 
-  const iconColorClasses = {
-    blue: "text-blue-600",
-    green: "text-green-600",
-    amber: "text-amber-600",
-    red: "text-red-600",
+  const iconBgClasses = {
+    blue: "bg-blue-200 text-blue-700",
+    green: "bg-green-200 text-green-700",
+    amber: "bg-amber-200 text-amber-700",
+    red: "bg-red-200 text-red-700",
+  };
+
+  const valueColorClasses = {
+    blue: "text-blue-700",
+    green: "text-green-700",
+    amber: "text-amber-700",
+    red: "text-red-700",
   };
 
   return (
-    <div className={`rounded-lg border-2 ${colorClasses[color]} p-6`}>
+    <div className={`rounded-2xl bg-gradient-to-br ${gradients[color]} border-2 p-6 shadow-md hover:shadow-xl transition-all duration-300 backdrop-blur-sm`}>
       <div className="flex items-start justify-between">
-        <div>
-          <p className="text-sm text-slate-600 font-medium">{title}</p>
-          <p className="text-3xl font-bold mt-2 text-slate-900">{value}</p>
-          {subtitle && <p className="text-sm text-slate-600 mt-1">{subtitle}</p>}
+        <div className="flex-1">
+          <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider">{title}</p>
+          <p className={`text-4xl font-bold mt-3 ${valueColorClasses[color]}`}>{value}</p>
+          {subtitle && <p className="text-sm text-slate-600 mt-2 font-medium">{subtitle}</p>}
         </div>
-        {icon && <div className={`text-3xl ${iconColorClasses[color]}`}>{icon}</div>}
+        {icon && (
+          <div className={`${iconBgClasses[color]} p-4 rounded-xl text-2xl shadow-md`}>
+            {icon}
+          </div>
+        )}
       </div>
     </div>
   );

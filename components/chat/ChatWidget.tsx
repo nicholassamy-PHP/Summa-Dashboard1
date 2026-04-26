@@ -83,19 +83,22 @@ export function ChatWidget() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors flex items-center justify-center z-40"
+          className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 flex items-center justify-center z-40 border-4 border-white"
         >
-          <MessageCircle size={24} />
+          <MessageCircle size={28} />
         </button>
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-lg shadow-2xl flex flex-col z-50 border border-slate-200">
-          <div className="flex items-center justify-between p-4 border-b border-slate-200 bg-blue-600 text-white rounded-t-lg">
-            <h3 className="font-semibold">Supply Chain Copilot</h3>
+        <div className="fixed bottom-8 right-8 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border-2 border-slate-200 overflow-hidden">
+          <div className="flex items-center justify-between p-5 border-b-2 border-slate-200 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-2xl">
+            <div>
+              <h3 className="font-bold text-lg">Supply Chain Copilot</h3>
+              <p className="text-xs text-blue-100 mt-0.5">Powered by Claude AI</p>
+            </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-blue-700 p-1 rounded"
+              className="hover:bg-blue-700 p-1 rounded-lg transition-colors"
             >
               <X size={20} />
             </button>
@@ -134,20 +137,20 @@ export function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="border-t border-slate-200 p-4 flex gap-2">
+          <div className="border-t-2 border-slate-200 p-4 flex gap-2 bg-slate-50">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSend()}
               placeholder="Ask about shipments..."
-              className="flex-1 px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-600 text-sm"
+              className="flex-1 px-4 py-3 border-2 border-slate-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-200 text-sm font-medium"
               disabled={isLoading}
             />
             <button
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 disabled:bg-slate-300 transition-colors"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-xl hover:shadow-lg disabled:bg-slate-300 transition-all duration-200"
             >
               <Send size={18} />
             </button>

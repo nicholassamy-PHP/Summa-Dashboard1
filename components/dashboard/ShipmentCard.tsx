@@ -1,84 +1,84 @@
 "use client";
 
 import { Shipment } from "@/types";
-import { TrendingUp, AlertCircle, CheckCircle } from "lucide-react";
+import { TrendingUp, AlertCircle, CheckCircle, ArrowRight } from "lucide-react";
 
 interface ShipmentCardProps {
   shipment: Shipment;
 }
 
 export function ShipmentCard({ shipment }: ShipmentCardProps) {
-  const statusColor = {
-    in_transit: "bg-blue-100 text-blue-800",
-    delivered: "bg-green-100 text-green-800",
-    customs: "bg-amber-100 text-amber-800",
-    delayed: "bg-red-100 text-red-800",
+  const statusConfig = {
+    in_transit: { bg: "bg-blue-50", border: "border-blue-200", badge: "bg-blue-100 text-blue-800", label: "In Transit" },
+    delivered: { bg: "bg-green-50", border: "border-green-200", badge: "bg-green-100 text-green-800", label: "Delivered" },
+    customs: { bg: "bg-amber-50", border: "border-amber-200", badge: "bg-amber-100 text-amber-800", label: "Customs" },
+    delayed: { bg: "bg-red-50", border: "border-red-200", badge: "bg-red-100 text-red-800", label: "Delayed" },
   };
 
-  const statusLabel = {
-    in_transit: "In Transit",
-    delivered: "Delivered",
-    customs: "Customs",
-    delayed: "Delayed",
-  };
-
+  const status = statusConfig[shipment.status];
   const docsVerified = shipment.documents.every((d) => d.status === "verified");
 
   return (
-    <div className="bg-white rounded-lg border border-slate-200 p-6 hover:shadow-lg transition-shadow">
-      <div className="flex items-start justify-between mb-4">
+    <div className={`${status.bg} rounded-2xl border-2 ${status.border} p-6 hover:shadow-lg transition-all duration-300 backdrop-blur-sm`}>
+      <div className="flex items-start justify-between mb-5">
         <div>
-          <h3 className="text-lg font-bold text-slate-900">{shipment.shipment_number}</h3>
-          <p className="text-sm text-slate-600">{shipment.driver_name}</p>
+          <h3 className="text-xl font-bold text-slate-900">{shipment.shipment_number}</h3>
+          <p className="text-sm text-slate-600 font-medium mt-1">Driver: {shipment.driver_name}</p>
         </div>
-        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusColor[shipment.status]}`}>
-          {statusLabel[shipment.status]}
+        <span className={`px-4 py-2 rounded-full text-xs font-bold ${status.badge} shadow-md`}>
+          {status.label}
         </span>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 mb-4">
+      <div className="grid grid-cols-2 gap-4 mb-5 p-4 bg-white bg-opacity-50 rounded-xl">
         <div>
-          <p className="text-xs text-slate-600">From</p>
-          <p className="text-sm font-semibold text-slate-900">
-            {shipment.origin.city}, {shipment.origin.country}
+          <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider">From</p>
+          <p className="text-sm font-bold text-slate-900 mt-1">
+            {shipment.origin.city}
           </p>
+          <p className="text-xs text-slate-600">{shipment.origin.country}</p>
         </div>
         <div>
-          <p className="text-xs text-slate-600">To</p>
-          <p className="text-sm font-semibold text-slate-900">
-            {shipment.destination.city}, {shipment.destination.country}
+          <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider">To</p>
+          <p className="text-sm font-bold text-slate-900 mt-1">
+            {shipment.destination.city}
           </p>
+          <p className="text-xs text-slate-600">{shipment.destination.country}</p>
         </div>
       </div>
 
-      <div className="flex items-center gap-4 text-sm mb-4">
-        <div>
-          <span className="text-slate-600">Current:</span>
-          <span className="font-semibold text-slate-900 ml-1">
-            {shipment.current_location.city}
-          </span>
+      <div className="grid grid-cols-3 gap-3 mb-5">
+        <div className="bg-white bg-opacity-60 rounded-lg p-3 border border-slate-200">
+          <p className="text-xs text-slate-600 font-semibold">Location</p>
+          <p className="text-sm font-bold text-slate-900 mt-1">{shipment.current_location.city}</p>
         </div>
-        <div>
-          <span className="text-slate-600">Speed:</span>
-          <span className="font-semibold text-slate-900 ml-1">{shipment.speed} km/h</span>
+        <div className="bg-white bg-opacity-60 rounded-lg p-3 border border-slate-200">
+          <p className="text-xs text-slate-600 font-semibold">Speed</p>
+          <p className="text-sm font-bold text-slate-900 mt-1">{shipment.speed} km/h</p>
+        </div>
+        <div className="bg-white bg-opacity-60 rounded-lg p-3 border border-slate-200">
+          <p className="text-xs text-slate-600 font-semibold">Distance</p>
+          <p className="text-sm font-bold text-slate-900 mt-1">{shipment.route_distance_km} km</p>
         </div>
       </div>
 
-      <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+      <div className="flex items-center justify-between pt-4 border-t-2 border-slate-200">
         <div className="flex items-center gap-2">
           {docsVerified ? (
-            <CheckCircle size={16} className="text-green-600" />
+            <>
+              <CheckCircle size={18} className="text-green-600" />
+              <span className="text-xs font-semibold text-green-700">Documents Verified</span>
+            </>
           ) : (
-            <AlertCircle size={16} className="text-amber-600" />
+            <>
+              <AlertCircle size={18} className="text-amber-600" />
+              <span className="text-xs font-semibold text-amber-700">Pending Verification</span>
+            </>
           )}
-          <span className="text-xs text-slate-600">
-            {docsVerified ? "All Documents Verified" : "Documents Pending"}
-          </span>
         </div>
-        <div className="flex items-center gap-1 text-xs text-slate-600">
-          <TrendingUp size={14} />
-          <span>{shipment.route_distance_km} km</span>
-        </div>
+        <button className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-colors">
+          View Details
+        </button>
       </div>
     </div>
   );

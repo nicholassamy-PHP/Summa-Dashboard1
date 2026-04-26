@@ -2,28 +2,31 @@
 
 export function Header() {
   return (
-    <header className="bg-slate-900 text-white border-b border-slate-700">
-      <div className="flex items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center font-bold">
+    <header className="bg-gradient-to-r from-blue-600 to-blue-700 text-white border-b border-blue-800 shadow-lg">
+      <div className="flex items-center justify-between px-8 py-5">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
             S
           </div>
-          <h1 className="text-xl font-bold">Summa Logistics</h1>
+          <div>
+            <h1 className="text-2xl font-bold">Summa Logistics</h1>
+            <p className="text-blue-100 text-xs">Supply Chain Management Platform</p>
+          </div>
         </div>
 
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2 px-3 py-2 bg-slate-800 rounded-lg text-sm">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span>System Status: Healthy</span>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 px-4 py-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg text-sm font-medium border border-white border-opacity-20 hover:bg-opacity-20 transition-all">
+            <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse"></div>
+            <span>System: Healthy</span>
           </div>
 
-          <div className="flex items-center gap-2 px-3 py-2 bg-slate-800 rounded-lg">
-            <span className="text-sm">Active Shipments:</span>
-            <span className="font-bold text-lg">2</span>
+          <div className="flex items-center gap-3 px-4 py-2 bg-white bg-opacity-10 backdrop-blur-sm rounded-lg border border-white border-opacity-20">
+            <span className="text-sm font-medium">Active:</span>
+            <span className="text-lg font-bold bg-green-400 bg-opacity-30 px-2 py-1 rounded">2</span>
           </div>
 
-          <div className="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center cursor-pointer hover:bg-slate-600">
-            <span className="text-sm font-semibold">U</span>
+          <div className="w-11 h-11 bg-white bg-opacity-20 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-30 transition-all shadow-lg border border-white border-opacity-20">
+            <span className="text-sm font-bold">U</span>
           </div>
         </div>
       </div>
