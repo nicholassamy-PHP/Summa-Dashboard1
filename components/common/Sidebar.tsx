@@ -41,10 +41,10 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="px-5 py-6 border-t border-gray-700 bg-gray-800 bg-opacity-50">
+      <div className="px-5 py-6 border-t border-gray-700 bg-gray-800/50">
         <div className="mb-4">
           <p className="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-2">Account</p>
-          <div className="bg-gray-700 bg-opacity-50 rounded-lg p-3 border border-gray-600">
+          <div className="bg-gray-700/50 rounded-lg p-3 border border-gray-600">
             <p className="text-sm font-semibold text-white">demo@canadatech.com</p>
             <p className="text-xs text-gray-400 mt-1">Administrator</p>
           </div>
