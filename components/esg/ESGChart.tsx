@@ -38,7 +38,12 @@ export function ESGChart({ data }: ESGChartProps) {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
-            <Tooltip formatter={(value) => `${value.toLocaleString()} kg CO2`} />
+            <Tooltip formatter={(value) => {
+              if (typeof value === 'number') {
+                return `${value.toLocaleString()} kg CO2`;
+              }
+              return '0 kg CO2';
+            }} />
             <Legend />
             <Bar dataKey="Summa Optimized" fill="#3b82f6" />
             <Bar dataKey="Traditional Carrier" fill="#ef4444" />
@@ -55,7 +60,12 @@ export function ESGChart({ data }: ESGChartProps) {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
             <YAxis />
-            <Tooltip formatter={(value) => `${value.toLocaleString()} kg CO2`} />
+            <Tooltip formatter={(value) => {
+              if (typeof value === 'number') {
+                return `${value.toLocaleString()} kg CO2`;
+              }
+              return '0 kg CO2';
+            }} />
             <Legend />
             <Line
               type="monotone"
