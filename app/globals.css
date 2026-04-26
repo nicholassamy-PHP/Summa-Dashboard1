@@ -18,4 +18,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+}
+
+@layer components {
+  .card-premium {
+    @apply bg-slate-800 bg-opacity-50 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300;
+  }
+
+  .kpi-value {
+    @apply text-4xl md:text-5xl font-bold tracking-tight;
+  }
+
+  .text-accent {
+    @apply text-blue-400;
+  }
 }

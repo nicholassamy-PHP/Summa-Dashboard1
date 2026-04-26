@@ -48,9 +48,15 @@ export default function DashboardHome() {
   }
 
   return (
-    <div className="p-8">
+    <div className="min-h-screen p-8">
+      {/* Page Header */}
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">Dashboard</h1>
+        <p className="text-slate-400 text-lg">Real-time supply chain metrics & insights</p>
+      </div>
+
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         <KPICard
           title="Active Shipments"
           value={shipments.length}
@@ -86,8 +92,8 @@ export default function DashboardHome() {
         {/* Shipments Section */}
         <div className="lg:col-span-2">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">Active Shipments</h2>
-            <p className="text-slate-600">Monitor your shipments in real-time</p>
+            <h2 className="text-3xl font-bold text-white mb-2">Active Shipments</h2>
+            <p className="text-slate-400 text-sm">Monitor your shipments in real-time</p>
           </div>
           <div className="grid grid-cols-1 gap-5">
             {shipments.map((shipment) => (
@@ -98,45 +104,48 @@ export default function DashboardHome() {
 
         {/* Quick Links & Info */}
         <div className="space-y-6">
-          <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 shadow-md">
-            <h3 className="font-bold text-slate-900 mb-5 text-lg">Quick Access</h3>
+          <div className="card-premium p-6">
+            <h3 className="font-bold text-white mb-5 text-lg">Quick Access</h3>
             <div className="space-y-3">
-              <a href="/dashboard/map" className="group block p-4 bg-gradient-to-br from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 rounded-xl transition-all duration-300 border border-blue-200 hover:border-blue-400 hover:shadow-lg">
+              <a href="/dashboard/map" className="group block p-4 bg-slate-700/40 hover:bg-slate-700/60 rounded-xl transition-all duration-300 border border-slate-600 hover:border-blue-500/50">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-bold text-blue-900">Live Map</p>
-                    <p className="text-xs text-blue-700 mt-1">Track shipment routes</p>
+                    <p className="font-semibold text-white">Live Map</p>
+                    <p className="text-xs text-slate-400 mt-1">Track shipment routes</p>
                   </div>
-                  <span className="text-lg group-hover:translate-x-1 transition-transform">📍</span>
+                  <span className="text-xl group-hover:translate-x-1 transition-transform">📍</span>
                 </div>
               </a>
-              <a href="/dashboard/documents" className="group block p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 hover:from-emerald-100 hover:to-emerald-200 rounded-xl transition-all duration-300 border border-emerald-200 hover:border-emerald-400 hover:shadow-lg">
+              <a href="/dashboard/documents" className="group block p-4 bg-slate-700/40 hover:bg-slate-700/60 rounded-xl transition-all duration-300 border border-slate-600 hover:border-green-500/50">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-bold text-emerald-900">Document Vault</p>
-                    <p className="text-xs text-emerald-700 mt-1">Customs documents</p>
+                    <p className="font-semibold text-white">Document Vault</p>
+                    <p className="text-xs text-slate-400 mt-1">Customs documents</p>
                   </div>
-                  <span className="text-lg group-hover:translate-x-1 transition-transform">📄</span>
+                  <span className="text-xl group-hover:translate-x-1 transition-transform">📄</span>
                 </div>
               </a>
-              <a href="/dashboard/esg" className="group block p-4 bg-gradient-to-br from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 rounded-xl transition-all duration-300 border border-orange-200 hover:border-orange-400 hover:shadow-lg">
+              <a href="/dashboard/esg" className="group block p-4 bg-slate-700/40 hover:bg-slate-700/60 rounded-xl transition-all duration-300 border border-slate-600 hover:border-amber-500/50">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-bold text-orange-900">ESG Analytics</p>
-                    <p className="text-xs text-orange-700 mt-1">Carbon tracking</p>
+                    <p className="font-semibold text-white">ESG Analytics</p>
+                    <p className="text-xs text-slate-400 mt-1">Carbon tracking</p>
                   </div>
-                  <span className="text-lg group-hover:translate-x-1 transition-transform">🌱</span>
+                  <span className="text-xl group-hover:translate-x-1 transition-transform">🌱</span>
                 </div>
               </a>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl p-6 text-white shadow-lg border border-purple-500">
-            <h3 className="font-bold mb-2 text-lg">✨ AI Copilot</h3>
-            <p className="text-sm text-purple-100 leading-relaxed">
-              Ask about shipment status, compliance risks, or carbon emissions. Available 24/7.
+          <div className="card-premium border-l-4 border-l-cyan-500 p-6">
+            <div className="flex items-start justify-between mb-3">
+              <h3 className="font-bold text-white text-lg">AI Copilot</h3>
+              <span className="text-cyan-400">✨</span>
+            </div>
+            <p className="text-sm text-slate-300 leading-relaxed mb-4">
+              Ask about shipment status, compliance risks, or carbon emissions in natural language.
             </p>
-            <button className="mt-4 w-full bg-white text-purple-700 font-bold py-2 px-4 rounded-lg hover:bg-purple-50 transition-all duration-200">
+            <button className="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-200">
               Open Chat
             </button>
           </div>
