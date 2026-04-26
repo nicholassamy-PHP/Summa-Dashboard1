@@ -20,7 +20,7 @@ export function DocumentVault({ documents }: DocumentVaultProps) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold text-slate-900">Documents</h3>
+        <h3 className="text-lg font-bold text-gray-900">Documents</h3>
         <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-semibold">
           Download Zip
         </button>
@@ -40,15 +40,15 @@ export function DocumentVault({ documents }: DocumentVaultProps) {
         {documents.map((doc) => (
           <div
             key={doc.id}
-            className="bg-white border border-slate-200 rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow"
+            className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-4 flex-1">
-              <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center">
-                <FileText className="text-slate-600" size={20} />
+              <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                <FileText className="text-gray-600" size={20} />
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-slate-900">{doc.name}</p>
-                <p className="text-xs text-slate-600">
+                <p className="font-semibold text-gray-900">{doc.name}</p>
+                <p className="text-xs text-gray-600">
                   {documentTypeLabels[doc.type]}
                 </p>
               </div>
@@ -80,8 +80,8 @@ export function DocumentVault({ documents }: DocumentVaultProps) {
                 )}
               </div>
 
-              <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                <Download className="text-slate-600" size={20} />
+              <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <Download className="text-gray-600" size={20} />
               </button>
             </div>
           </div>

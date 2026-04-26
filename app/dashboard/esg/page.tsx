@@ -27,7 +27,7 @@ export default function ESGPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-full">
-        <div className="text-slate-600">Loading ESG data...</div>
+        <div className="text-gray-600">Loading ESG data...</div>
       </div>
     );
   }
@@ -35,8 +35,8 @@ export default function ESGPage() {
   return (
     <div className="p-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900">ESG & Sustainability</h1>
-        <p className="text-slate-600 mt-2">
+        <h1 className="text-3xl font-bold text-gray-900">ESG & Sustainability</h1>
+        <p className="text-gray-600 mt-2">
           Monitor your environmental impact and carbon emissions savings
         </p>
       </div>

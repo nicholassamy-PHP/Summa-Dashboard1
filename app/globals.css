@@ -24,7 +24,7 @@ body {
 
 @layer components {
   .card-premium {
-    @apply bg-slate-800 bg-opacity-50 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300;
+    @apply bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300;
   }
 
   .kpi-value {

@@ -29,10 +29,10 @@ export function KPICard({ title, value, subtitle, icon, color = "blue" }: KPICar
     <div className={`card-premium border-l-4 ${accentColors[color]} p-8 group hover:border-opacity-100 transition-all`}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest letter-spacing">{title}</p>
+          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest letter-spacing">{title}</p>
           <p className={`kpi-value mt-4 ${accentColors[color].split(' ')[0]}`}>{value}</p>
           {subtitle && (
-            <p className="text-sm text-slate-400 mt-3 font-medium">{subtitle}</p>
+            <p className="text-sm text-gray-400 mt-3 font-medium">{subtitle}</p>
           )}
         </div>
         {icon && (
@@ -41,10 +41,10 @@ export function KPICard({ title, value, subtitle, icon, color = "blue" }: KPICar
           </div>
         )}
       </div>
-      <div className="mt-4 pt-4 border-t border-slate-700/50">
+      <div className="mt-4 pt-4 border-t border-gray-700/50">
         <div className="flex items-center justify-between text-xs">
-          <span className="text-slate-500">Last updated</span>
-          <span className="text-slate-400">Just now</span>
+          <span className="text-gray-500">Last updated</span>
+          <span className="text-gray-400">Just now</span>
         </div>
       </div>
     </div>

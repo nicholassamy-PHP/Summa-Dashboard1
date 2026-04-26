@@ -90,8 +90,8 @@ export function ChatWidget() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-8 right-8 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border-2 border-slate-200 overflow-hidden">
-          <div className="flex items-center justify-between p-5 border-b-2 border-slate-200 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-2xl">
+        <div className="fixed bottom-8 right-8 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border-2 border-gray-200 overflow-hidden">
+          <div className="flex items-center justify-between p-5 border-b-2 border-gray-200 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-2xl">
             <div>
               <h3 className="font-bold text-lg">Supply Chain Copilot</h3>
               <p className="text-xs text-blue-100 mt-0.5">Powered by Claude AI</p>
@@ -116,7 +116,7 @@ export function ChatWidget() {
                   className={`max-w-xs px-4 py-2 rounded-lg ${
                     msg.role === "user"
                       ? "bg-blue-600 text-white rounded-br-none"
-                      : "bg-slate-100 text-slate-900 rounded-bl-none"
+                      : "bg-gray-100 text-gray-900 rounded-bl-none"
                   }`}
                 >
                   <p className="text-sm">{msg.content}</p>
@@ -125,11 +125,11 @@ export function ChatWidget() {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-slate-100 text-slate-900 px-4 py-2 rounded-lg rounded-bl-none">
+                <div className="bg-gray-100 text-gray-900 px-4 py-2 rounded-lg rounded-bl-none">
                   <div className="flex gap-2">
-                    <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-                    <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.4s" }}></div>
                   </div>
                 </div>
               </div>
@@ -137,20 +137,20 @@ export function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="border-t-2 border-slate-200 p-4 flex gap-2 bg-slate-50">
+          <div className="border-t-2 border-gray-200 p-4 flex gap-2 bg-gray-50">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSend()}
               placeholder="Ask about shipments..."
-              className="flex-1 px-4 py-3 border-2 border-slate-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-200 text-sm font-medium"
+              className="flex-1 px-4 py-3 border-2 border-gray-300 rounded-xl focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-200 text-sm font-medium"
               disabled={isLoading}
             />
             <button
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-xl hover:shadow-lg disabled:bg-slate-300 transition-all duration-200"
+              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-xl hover:shadow-lg disabled:bg-gray-300 transition-all duration-200"
             >
               <Send size={18} />
             </button>

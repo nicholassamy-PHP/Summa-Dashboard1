@@ -29,8 +29,8 @@ export function ESGChart({ data }: ESGChartProps) {
 
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-lg border border-slate-200 p-6">
-        <h3 className="text-lg font-bold text-slate-900 mb-6">
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h3 className="text-lg font-bold text-gray-900 mb-6">
           CO2 Emissions: Summa vs Traditional Carrier
         </h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -51,8 +51,8 @@ export function ESGChart({ data }: ESGChartProps) {
         </ResponsiveContainer>
       </div>
 
-      <div className="bg-white rounded-lg border border-slate-200 p-6">
-        <h3 className="text-lg font-bold text-slate-900 mb-6">
+      <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <h3 className="text-lg font-bold text-gray-900 mb-6">
           Monthly Emissions Saved
         </h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -82,24 +82,24 @@ export function ESGChart({ data }: ESGChartProps) {
         {data[data.length - 1] && (
           <>
             <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6">
-              <p className="text-sm text-slate-600 font-medium">Last Month Savings</p>
+              <p className="text-sm text-gray-600 font-medium">Last Month Savings</p>
               <p className="text-3xl font-bold text-green-600 mt-2">
                 {data[data.length - 1].emissions_saved.toLocaleString()} kg CO2
               </p>
-              <p className="text-sm text-slate-600 mt-1">
+              <p className="text-sm text-gray-600 mt-1">
                 {data[data.length - 1].savings_percentage.toFixed(1)}% reduction
               </p>
             </div>
 
             <div className="bg-blue-50 border-2 border-blue-500 rounded-lg p-6">
-              <p className="text-sm text-slate-600 font-medium">Total Distance</p>
+              <p className="text-sm text-gray-600 font-medium">Total Distance</p>
               <p className="text-3xl font-bold text-blue-600 mt-2">
                 {(data[data.length - 1].total_distance_km / 1000).toFixed(1)}K km
               </p>
             </div>
 
             <div className="bg-amber-50 border-2 border-amber-500 rounded-lg p-6">
-              <p className="text-sm text-slate-600 font-medium">Monthly Emissions</p>
+              <p className="text-sm text-gray-600 font-medium">Monthly Emissions</p>
               <p className="text-3xl font-bold text-amber-600 mt-2">
                 {(data[data.length - 1].co2_emissions / 1000).toFixed(1)}K kg
               </p>

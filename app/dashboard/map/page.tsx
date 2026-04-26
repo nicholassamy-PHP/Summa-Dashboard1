@@ -27,15 +27,15 @@ export default function MapPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-full">
-        <div className="text-slate-600">Loading map...</div>
+        <div className="text-gray-600">Loading map...</div>
       </div>
     );
   }
 
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold text-slate-900 mb-6">Live Tracking Map</h1>
-      <div className="bg-white rounded-lg border border-slate-200 overflow-hidden shadow-lg h-[600px]">
+      <h1 className="text-3xl font-bold text-gray-900 mb-6">Live Tracking Map</h1>
+      <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-lg h-[600px]">
         <LiveMap shipments={shipments} />
       </div>
     </div>

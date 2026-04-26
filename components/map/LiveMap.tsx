@@ -9,7 +9,7 @@ interface LiveMapProps {
 
 export function LiveMap({ shipments }: LiveMapProps) {
   return (
-    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg relative">
+    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg relative">
       {/* Simple SVG Map representation */}
       <svg className="w-full h-full max-w-4xl max-h-96" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
         {/* Background */}
@@ -77,14 +77,14 @@ export function LiveMap({ shipments }: LiveMapProps) {
 
       {/* Info panel */}
       <div className="absolute bottom-4 right-4 bg-white rounded-lg shadow-lg p-4 max-w-xs">
-        <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+        <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
           <MapPin size={16} />
           Active Shipments
         </h4>
         <div className="space-y-2 text-sm">
           {shipments.map((shipment) => (
-            <div key={shipment.id} className="text-slate-600">
-              <p className="font-semibold text-slate-900">{shipment.shipment_number}</p>
+            <div key={shipment.id} className="text-gray-600">
+              <p className="font-semibold text-gray-900">{shipment.shipment_number}</p>
               <p>📍 {shipment.current_location.city}</p>
               <p>⏱️ ETA: {new Date(shipment.eta).toLocaleDateString()}</p>
             </div>

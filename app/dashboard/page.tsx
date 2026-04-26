@@ -42,7 +42,7 @@ export default function DashboardHome() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-full">
-        <div className="text-slate-600">Loading dashboard...</div>
+        <div className="text-gray-600">Loading dashboard...</div>
       </div>
     );
   }
@@ -52,7 +52,7 @@ export default function DashboardHome() {
       {/* Page Header */}
       <div className="mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">Dashboard</h1>
-        <p className="text-slate-400 text-lg">Real-time supply chain metrics & insights</p>
+        <p className="text-gray-400 text-lg">Real-time supply chain metrics & insights</p>
       </div>
 
       {/* KPI Cards */}
@@ -93,7 +93,7 @@ export default function DashboardHome() {
         <div className="lg:col-span-2">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-white mb-2">Active Shipments</h2>
-            <p className="text-slate-400 text-sm">Monitor your shipments in real-time</p>
+            <p className="text-gray-400 text-sm">Monitor your shipments in real-time</p>
           </div>
           <div className="grid grid-cols-1 gap-5">
             {shipments.map((shipment) => (
@@ -107,29 +107,29 @@ export default function DashboardHome() {
           <div className="card-premium p-6">
             <h3 className="font-bold text-white mb-5 text-lg">Quick Access</h3>
             <div className="space-y-3">
-              <a href="/dashboard/map" className="group block p-4 bg-slate-700/40 hover:bg-slate-700/60 rounded-xl transition-all duration-300 border border-slate-600 hover:border-blue-500/50">
+              <a href="/dashboard/map" className="group block p-4 bg-gray-700/40 hover:bg-gray-700/60 rounded-xl transition-all duration-300 border border-gray-600 hover:border-blue-500/50">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-white">Live Map</p>
-                    <p className="text-xs text-slate-400 mt-1">Track shipment routes</p>
+                    <p className="text-xs text-gray-400 mt-1">Track shipment routes</p>
                   </div>
                   <span className="text-xl group-hover:translate-x-1 transition-transform">📍</span>
                 </div>
               </a>
-              <a href="/dashboard/documents" className="group block p-4 bg-slate-700/40 hover:bg-slate-700/60 rounded-xl transition-all duration-300 border border-slate-600 hover:border-green-500/50">
+              <a href="/dashboard/documents" className="group block p-4 bg-gray-700/40 hover:bg-gray-700/60 rounded-xl transition-all duration-300 border border-gray-600 hover:border-green-500/50">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-white">Document Vault</p>
-                    <p className="text-xs text-slate-400 mt-1">Customs documents</p>
+                    <p className="text-xs text-gray-400 mt-1">Customs documents</p>
                   </div>
                   <span className="text-xl group-hover:translate-x-1 transition-transform">📄</span>
                 </div>
               </a>
-              <a href="/dashboard/esg" className="group block p-4 bg-slate-700/40 hover:bg-slate-700/60 rounded-xl transition-all duration-300 border border-slate-600 hover:border-amber-500/50">
+              <a href="/dashboard/esg" className="group block p-4 bg-gray-700/40 hover:bg-gray-700/60 rounded-xl transition-all duration-300 border border-gray-600 hover:border-amber-500/50">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-white">ESG Analytics</p>
-                    <p className="text-xs text-slate-400 mt-1">Carbon tracking</p>
+                    <p className="text-xs text-gray-400 mt-1">Carbon tracking</p>
                   </div>
                   <span className="text-xl group-hover:translate-x-1 transition-transform">🌱</span>
                 </div>
@@ -142,7 +142,7 @@ export default function DashboardHome() {
               <h3 className="font-bold text-white text-lg">AI Copilot</h3>
               <span className="text-cyan-400">✨</span>
             </div>
-            <p className="text-sm text-slate-300 leading-relaxed mb-4">
+            <p className="text-sm text-gray-300 leading-relaxed mb-4">
               Ask about shipment status, compliance risks, or carbon emissions in natural language.
             </p>
             <button className="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-200">
