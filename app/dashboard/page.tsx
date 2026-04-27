@@ -88,7 +88,7 @@ export default function DashboardHome() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Shipments Section */}
         <div className="lg:col-span-2">
           <div className="mb-8">
@@ -102,52 +102,50 @@ export default function DashboardHome() {
           </div>
         </div>
 
-        {/* Quick Links & Info */}
-        <div className="space-y-6">
-          <div className="card-premium p-6">
-            <h3 className="font-bold text-white mb-5 text-lg">Quick Access</h3>
-            <div className="space-y-3">
-              <a href="/dashboard/map" className="group block p-4 bg-gray-700/40 hover:bg-gray-700/60 rounded-xl transition-all duration-300 border border-gray-600 hover:border-blue-500/50">
+        {/* Quick Links & Info - Expanded */}
+        <div className="lg:col-span-2 space-y-6">
+          <div className="card-premium p-8">
+            <h3 className="font-bold text-white mb-6 text-2xl">Quick Access</h3>
+            <div className="space-y-4">
+              <a href="/dashboard/map" className="group block p-5 bg-gradient-to-r from-blue-600/20 to-blue-600/5 hover:from-blue-600/30 hover:to-blue-600/15 rounded-xl transition-all duration-300 border border-blue-500/30 hover:border-blue-500/60">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-semibold text-white">Live Map</p>
-                    <p className="text-xs text-gray-400 mt-1">Track shipment routes</p>
+                    <p className="font-bold text-white text-lg">Live Map</p>
+                    <p className="text-sm text-gray-300 mt-2">Real-time tracking of shipment routes and locations</p>
                   </div>
-                  <span className="text-xl group-hover:translate-x-1 transition-transform">📍</span>
+                  <span className="text-3xl group-hover:translate-x-1 transition-transform">📍</span>
                 </div>
               </a>
-              <a href="/dashboard/documents" className="group block p-4 bg-gray-700/40 hover:bg-gray-700/60 rounded-xl transition-all duration-300 border border-gray-600 hover:border-green-500/50">
+              <a href="/dashboard/documents" className="group block p-5 bg-gradient-to-r from-green-600/20 to-green-600/5 hover:from-green-600/30 hover:to-green-600/15 rounded-xl transition-all duration-300 border border-green-500/30 hover:border-green-500/60">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-semibold text-white">Document Vault</p>
-                    <p className="text-xs text-gray-400 mt-1">Customs documents</p>
+                    <p className="font-bold text-white text-lg">Document Vault</p>
+                    <p className="text-sm text-gray-300 mt-2">Access customs documents and compliance paperwork</p>
                   </div>
-                  <span className="text-xl group-hover:translate-x-1 transition-transform">📄</span>
+                  <span className="text-3xl group-hover:translate-x-1 transition-transform">📄</span>
                 </div>
               </a>
-              <a href="/dashboard/esg" className="group block p-4 bg-gray-700/40 hover:bg-gray-700/60 rounded-xl transition-all duration-300 border border-gray-600 hover:border-amber-500/50">
+              <a href="/dashboard/esg" className="group block p-5 bg-gradient-to-r from-emerald-600/20 to-emerald-600/5 hover:from-emerald-600/30 hover:to-emerald-600/15 rounded-xl transition-all duration-300 border border-emerald-500/30 hover:border-emerald-500/60">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-semibold text-white">ESG Analytics</p>
-                    <p className="text-xs text-gray-400 mt-1">Carbon tracking</p>
+                    <p className="font-bold text-white text-lg">ESG Analytics</p>
+                    <p className="text-sm text-gray-300 mt-2">Monitor carbon emissions and sustainability metrics</p>
                   </div>
-                  <span className="text-xl group-hover:translate-x-1 transition-transform">🌱</span>
+                  <span className="text-3xl group-hover:translate-x-1 transition-transform">🌱</span>
+                </div>
+              </a>
+              <a href="/dashboard/reports" className="group block p-5 bg-gradient-to-r from-amber-600/20 to-amber-600/5 hover:from-amber-600/30 hover:to-amber-600/15 rounded-xl transition-all duration-300 border border-amber-500/30 hover:border-amber-500/60">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-bold text-white text-lg">Analytics & Reports</p>
+                    <p className="text-sm text-gray-300 mt-2">Comprehensive logistics and compliance reports</p>
+                  </div>
+                  <span className="text-3xl group-hover:translate-x-1 transition-transform">📊</span>
                 </div>
               </a>
             </div>
           </div>
-
-          <div className="card-premium border-l-4 border-l-cyan-500 p-6">
-            <div className="flex items-start justify-between mb-3">
-              <h3 className="font-bold text-white text-lg">AI Copilot</h3>
-              <span className="text-cyan-400">✨</span>
-            </div>
-            <p className="text-sm text-gray-300 leading-relaxed mb-4">
-              Ask about shipment status, compliance risks, or carbon emissions in natural language.
-            </p>
-            <button className="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-all duration-200">
-              Open Chat
-            </button>
+        </div>
           </div>
         </div>
       </div>

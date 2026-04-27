@@ -2,7 +2,6 @@
 
 import { Header } from "@/components/common/Header";
 import { Sidebar } from "@/components/common/Sidebar";
-import { ChatWidget } from "@/components/chat/ChatWidget";
 import { SidebarProvider, useSidebar } from "@/lib/sidebar-context";
 
 function DashboardLayoutContent({
@@ -21,7 +20,6 @@ function DashboardLayoutContent({
         <Header />
         <main className="flex-1 overflow-auto">{children}</main>
       </div>
-      <ChatWidget />
     </div>
   );
 }
